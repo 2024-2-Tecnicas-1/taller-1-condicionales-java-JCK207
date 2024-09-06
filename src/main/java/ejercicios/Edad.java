@@ -3,6 +3,7 @@ package ejercicios;
 
 import static ejercicios.SetDeTenis.evaluar;
 import java.util.Scanner;
+import java.time.LocalDate;//
 
 /**
  *
@@ -11,7 +12,13 @@ import java.util.Scanner;
 public class Edad {
     public static String evaluar(int dia, int mes, int anno) {
         // TODO: Coloca aquí el código del ejercicio 6: Edad
-        return "";
+        LocalDate currentDate = LocalDate.now();
+        int diaL = currentDate.getDayOfMonth();
+        int mesL = currentDate.getMonthValue();
+        int annoL = currentDate.getYear();
+        int annosT = annoL-anno;
+        if (mes>=mesL && dia>diaL) annosT -= 1;
+        return "Usted tiene "+annosT+ " años";
     }
     
     public static void main(String[] args) {
